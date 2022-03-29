@@ -5,6 +5,12 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PlataformaController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Models\User;
+use App\Models\plataforma;
+use Illuminate\Http\Request;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +32,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-Route::get('/usuarios', [UserController::class, 'index'])->name('usuarios.index');//Mostrar usuarios
+Route::get('/usuarios', [UserController::class, 'index'])->name('usuarios.index');//Mostrar usuari
 Route::get('/usuarios/{id}', [UserController::class, 'edit'])->name('usuarios.edit');//Mostrar vista de actualizar
 Route::put('/usuarios/{id}', [UserController::class, 'update'])->name('usuarios.update');//Actualizar usuarios
 Route::delete('/usuarios/{id}', [UserController::class, 'destroy'])->name('usuarios.destroy');//Eliminar usuarios
@@ -36,7 +41,7 @@ Route::get('/plataformas', [PlataformaController::class, 'index'])->name('plataf
 Route::get('/plataformas/register', [PlataformaController::class, 'register'])->name('plataformas.register');//Mostrar registro de plataformas
 Route::post('/plataformas/store', [PlataformaController::class, 'store'])->name('plataformas.store');//Crear plataformas
 Route::get('/plataformas/{id}', [PlataformaController::class, 'edit'])->name('plataformas.edit');//Mostrar vista de actualizar
-Route::put('/plataformas/{id}', [PlataformaController::class, 'update'])->name('plataformas.update');//Actualizar usuarios
-Route::delete('/plataformas/{id}', [PlataformaController::class, 'destroy'])->name('plataformas.destroy');//Eliminar usuarios
+Route::put('/plataformas/{id}', [PlataformaController::class, 'update'])->name('plataformas.update');//Actualizar plataforma
+Route::delete('/plataformas/{id}', [PlataformaController::class, 'destroy'])->name('plataformas.destroy');//Eliminar plataforma
 
 
